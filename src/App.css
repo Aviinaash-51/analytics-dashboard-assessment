@@ -1,38 +1,178 @@
-.App {
+
+.container {
+  padding: 20px;
+}
+
+/* Dashboard container styling */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+
+
+.chart-container {
+  margin-bottom: 30px; 
+  border-radius: 8px; 
+  overflow: scroll; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  position: relative; 
+}
+
+
+.chart-container::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+.chart-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px; 
+}
+
+.chart-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3); 
+  border-radius: 8px;
+  
+}
+
+.chart-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* For Firefox */
+.chart-container {
+  scrollbar-width: thin; /* Make the scrollbar thin */
+  scrollbar-color: rgba(133, 173, 236, 0.3) rgba(103, 114, 186, 0.1); 
+}
+
+.chart-container::after {
+  content: '';
+  position: absolute;
+  width: 8px; 
+  height: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px; 
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+h4 {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filters, .charts, .table, .pagination {
+  margin-bottom: 20px;
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.load-more:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+.filters {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filters button {
+  padding: 10px 15px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
+
+.table th {
+  background-color: #f4f4f4;
+}
+
+.charts {
+  margin-bottom: 20px;
+}
+
+
+.pagination-nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-item .page-link {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.page-item .page-link:hover {
+  background-color: #f0f0f0;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+
